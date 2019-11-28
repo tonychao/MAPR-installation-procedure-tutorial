@@ -9,4 +9,4 @@ This tutorial shows how to install an old version of MAPR to run this example ht
 
 ## MAPR installation
 
-## Running SPARK with dataframe
+## Running SPARK with GraphFrame

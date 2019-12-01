@@ -66,10 +66,34 @@ usermod -aG sudo install
 
 ## MAPR installation
 
-.... still preparing the tutorial
+<img  src="images/03install01.PNG" width = "50%"> 
+<img  src="images/03install02.PNG" width = "50%"> 
+<img  src="images/03install03.PNG" width = "50%"> 
+<img  src="images/03install04.PNG" width = "50%"> 
+<img  src="images/03install05.PNG" width = "50%"> 
+<img  src="images/03install06.PNG" width = "50%"> 
+<img  src="images/03install07.PNG" width = "50%"> 
 
 ## Running SPARK with GraphFrame
 
-.... still preparing the tutorial
+```sh
+su - mapr
+wget https://snap.stanford.edu/data/facebook.tar.gz
+wget https://snap.stanford.edu/data/facebook_combined.txt.gz
+wget https://snap.stanford.edu/data/readme-Ego.txt
+tar xvfz facebook.tar.gz -C /mapr/demo.mapr.com/user/mapr --strip 1
+gunzip -c facebook_combined.txt.gz > facebook_combined.txt
+mv facebook_combined.txt /mapr/demo.mapr.com/user/mapr
+```
 
+```sh
+wget https://raw.githubusercontent.com/mapr-demos/spark-graphframes/master/gframes.py
+```
+
+```sh
+/opt/mapr/spark/spark-1.5.2/bin/spark-submit --packages graphframes:graphframes:0.1.0-spark1.5,com.databricks:spark-csv_2.11:1.4.0 gframes.py
+```
+<img  src="images/04code01.PNG" width = "100%"> 
+<!--- 
 >I hope this tutorial will save your time.  (I spent 3 days with a lot of struggles, and finally I made it work.) 
+--->
